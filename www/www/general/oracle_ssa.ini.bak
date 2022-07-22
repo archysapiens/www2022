@@ -1,0 +1,7 @@
+
+[CONEXION_A_SERVICODOR ORACLE]
+servidor = 10.0.2.15
+usuario  = ssa
+password = oracle
+SID_ssa = xe
+CHARSET=UTF8

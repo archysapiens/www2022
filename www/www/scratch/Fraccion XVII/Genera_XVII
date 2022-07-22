@@ -1,0 +1,25 @@
+<?php
+// proceso de carga de l tabla Remuneraciones_VIII
+// FASE I Descarga de Informacion.
+//
+ini_set('memory_limit', '4024M');
+ini_set('max_execution_time', 12000);
+require('../../general/generales.inc');
+require('ac_db_pn.php');
+$db = new DbOracle("pro_nomina", "ArchiSoft");
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
+
+$ArchivoEntrada =$argv[UNO];
+$ArchivoDetalle =$argv[DOS];
+$GestorArchivo = fopen($ArchivoEntrada, "r");
+$GestorArchivoDet = fopen($ArchivoDetalle, "r");
+
+if (!$GestorArchivo or !$GestorArchivoDet) {
+	echo "Error al abrir archivo Error |ArchivoEntrada";
+}
+
+
+?>

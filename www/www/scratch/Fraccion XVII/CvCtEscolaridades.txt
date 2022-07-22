@@ -1,0 +1,10 @@
+﻿CvCtEscolaridad_Id|CvCtEscolaridad_Descripcion
+1|INDEFINIDO
+2|LICENCIATURA
+3|ESPECIALIDAD
+4|MAESTRIA
+5|DOCTORADO
+6|POSTDOCTORADO
+
+(6 filas afectadas)
+

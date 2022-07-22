@@ -1,0 +1,2078 @@
+ 	
+		<!DOCTYPE html>
+		<html>
+
+		<head>
+
+		    <meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		    <title>Secretaria de Salud</title>
+              <script src="../js/jquery-2.1.1.js"></script>
+		    <link href="../css/bootstrap.min.css" rel="stylesheet">
+		    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+
+			<link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
+
+		    <!-- Toastr style -->
+		    <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+		    <!-- Gritter -->
+		    <link href="../js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+
+            <link href="../css/animate.css" rel="stylesheet">
+            <link href="../css/style.css" rel="stylesheet">            
+
+            <link href="../css/plugins/dropzone/basic.css" rel="stylesheet">
+            <link href="../css/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+
+             <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+            <link href="../css/plugins/steps/jquery.steps.css" rel="stylesheet">
+
+
+
+            <script src="../js/bootstrap.min.js"></script>
+
+             <script src="../js/bootstrapValidator.min.js"></script>
+            <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+            <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+        <!-- Data picker -->
+        <link href="../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+        <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+        
+		<link href="../css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+		
+        <link href="../css/plugins/select2/select2.min.css" rel="stylesheet">
+        
+        <link href="../css/input-foto.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">            
+
+<!--Confirm -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+
+<!--Datepicker -->
+    <script src="../js/plugins/datapicker/bootstrap-datepicker-spanish.js"></script>
+    
+     <!-- iCheck -->
+    <script src="../js/plugins/iCheck/icheck.min.js"></script>
+ 
+    
+    <!-- Select2 -->
+    <script src="../js/plugins/select2/select2.full.min.js"></script>
+	
+	 
+    
+    
+    <script src="../js/tabs.js"></script>
+
+
+
+
+
+            <style type="text/css">
+            /*boton arriba*/
+            .ir-arriba{
+              display: none;
+              padding: 20px;
+              cursor: pointer;
+              position: fixed;
+              bottom: 0;
+              right: 0;
+            }
+
+
+            </style>
+
+
+                <style>
+
+        .wizard > .content > .body { position: relative; }
+
+    </style>
+
+
+
+<script>
+//Boton arriba
+$(document).ready(function(){
+
+var Noe;
+
+  $('.ir-arriba').click(function(){
+    $('body, html').animate({
+      scrollTop: '0px'
+    }, 1000);
+  });
+  $(window).scroll(function(){
+    if( $(this).scrollTop() > 0 ){
+        $('.ir-arriba').slideDown(300);
+    }else {
+        $('.ir-arriba').slideUp(300);
+    };
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+//Fin boton arriba
+
+
+
+</script>
+
+
+ <script>
+        $(document).ready(function(){
+       });
+    </script>
+
+
+<!-- ace styles -->
+        <link rel="stylesheet" href="../css/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+
+
+<style>
+    /* message box */
+    .message-box {
+      display: none;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+    .message-box.open {
+      display: block;
+    }
+    .message-box .mb-container {
+      position: absolute;
+      left: 0px;
+      top: 35%;
+      background: #056dae;
+      opacity:0.8;
+      padding: 20px;
+      width: 100%;
+    }
+    .message-box .mb-container .mb-middle {
+      width: 50%;
+      left: 25%;
+      position: relative;
+      color: #FFF;
+    }
+    .message-box .mb-container .mb-middle .mb-title {
+      width: 100%;
+      float: left;
+      padding: 10px 0px 0px;
+      font-size: 31px;
+      font-weight: 400;
+      line-height: 36px;
+    }
+    .message-box .mb-container .mb-middle .mb-title .fa,
+    .message-box .mb-container .mb-middle .mb-title .glyphicon {
+      font-size: 38px;
+      float: left;
+      margin-right: 10px;
+    }
+    .message-box .mb-container .mb-middle .mb-content {
+      width: 100%;
+      float: left;
+      padding: 10px 0px 0px;
+    }
+    .message-box .mb-container .mb-middle .mb-content p {
+      margin-bottom: 0px;
+    }
+    .message-box .mb-container .mb-middle .mb-footer {
+      width: 100%;
+      float: left;
+      padding: 10px 0px;
+    }
+    .message-box.message-box-warning .mb-container {
+      background: rgba(254, 162, 35, 0.9);
+    }
+    .message-box.message-box-danger .mb-container {
+      background: rgba(182, 70, 69, 0.9);
+    }
+    .message-box.message-box-info .mb-container {
+      background: rgba(63, 186, 228, 0.9);
+    }
+    .message-box.message-box-success .mb-container {
+      background: rgba(149, 183, 93, 0.9);
+    }
+    /* end message box */
+    </style>
+
+<style>
+    @media screen and (max-width: 600px){
+      .message-box .mb-container {
+        top: 22%;
+      }
+      .message-box .mb-container .mb-middle .mb-title {
+        float: left;
+        padding: 10px 0px 0px;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 36px;
+        width:160%;
+      }
+    }
+    </style>
+
+<link href="../css/default-black.css" rel="stylesheet">
+
+<script>
+function PersonalizaPerfil(){
+        $("body").removeClass("skin-1");
+                                $("body").removeClass("skin-2");
+                                $("body").removeClass("skin-4");
+                                $("body").removeClass("skin-5");
+                                $("body").removeClass("skin-6");
+                                $("body").removeClass("skin-7");
+
+
+                                $("body").addClass("skin-1");
+                                $("#dgrht").removeClass("dgrhtcssdft");
+                                $("#dgrht").addClass("dgrhtcss");
+                        
+
+}
+</script>
+
+
+		</head>
+
+<body  onload="PersonalizaPerfil();">
+
+
+<audio id="audio-alert" src="../audio/alert.mpeg" preload="auto"></audio>
+  <audio id="audio-fail"  src="../audio/fail.mpeg"  preload="auto"></audio>
+    <!-- END PRELOADS -->
+
+<!-- Modal par Medicos Residentes -->
+
+                          <div class="modal inmodal" id="modal-residentes" tabindex="-1" role="dialog"  aria-hidden="true">
+                                <div class="modal-dialog">
+
+                                    <div class="modal-content animated fadeIn">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <i class="fa fa-database modal-icon"></i>
+                                            <h4 class="modal-title"> New Data Set</h4>
+                                            <small>Set de datos utilizado para el ejercicio</small>
+                                        </div>
+
+
+                                        <div class="modal-body" style="padding-top: 1px;">
+<!-- Inicia modal Body -->
+
+
+                        <div class="ibox-content forum-container">
+
+                            <div class="forum-title">
+                                 <h3>Total Rows</h3>
+                            </div>
+							
+                            <div class="forum-title">
+                                 <img src="../images/SITIO-EN-CONSTRUCCION.jpg" width="450" height="310">
+                            </div>
+
+							
+							
+<!--							
+                            <div class="forum-item active">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-hospital-o"></i>
+                                        </div>
+                                        <a id="vac-rf-mr" href="#" class="forum-item-title">MÉDICOS RESIDENTES</a>
+                                    </div>
+                                    <div class="col-md-2 forum-info">
+                                        <div>
+                                         <span class="views-number">
+                                            10
+                                        </span>
+                                            
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="forum-item">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-user-md"></i>
+                                        </div>
+                                        <a id="vac-rf-cs"  href="#" class="forum-item-title">M.R. PARA TRABAJO SOCIAL COMUNITARIO(CARAVANAS DE LA SALUD) </a>
+                                    </div>
+
+                                    <div class="col-md-2 forum-info">
+                                        <div>
+                                         <span class="views-number">
+                                            10
+
+                                        </span>
+                                            
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="forum-item active">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-hospital-o"></i>
+                                        </div>
+                                        <a id="vac-rf-ip" href="#" class="forum-item-title">INTERNOS DE PRE-GRADO</a>
+                                    </div>
+                                    <div class="col-md-2 forum-info">
+                                        <div>
+                                         <span class="views-number">
+                                            30
+                                        </span>
+                                            
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="forum-item">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-user-md"></i>
+                                        </div>
+                                        <a id="vac-rf-ssam"  href="#" class="forum-item-title">SERVICIO SOCIAL ÁREA MÉDICA</a>
+                                    </div>
+
+                                    <div class="col-md-2 forum-info">
+                                        <div>
+                                         <span class="views-number">
+                                            10
+
+                                        </span>
+                                            
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+-->
+</div>
+
+
+
+
+<!-- Termna modal body -->
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-white" data-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-primary">Aceptar</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+<!-- Fin Modal par Medicos Residentes -->
+
+
+
+<!-- MESSAGE BOX-->
+      <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+        <div class="mb-container">
+          <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-sign-out"></span> ¿<strong>Cerrar sesión</strong> ?</div>
+            <div class="mb-content">
+              <p>¿Seguro que quieres salir?</p>                    
+              <p>Pulse 'No' si desea continuar trabajando. Pulse 'Sí' para salir del usuario actual.</p>
+            </div>
+            <div class="mb-footer">
+              <div class="pull-right">
+                <a href="#" id="btn-logout" class="btn btn-primary" style="background-color: white;border-color: white;color: black;">Sí</a>
+                <button class="btn btn-default mb-control-close" style="background-color: white;border-color: white;color: black;">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- END MESSAGE BOX-->
+
+
+
+
+
+
+<table align="center" height="60" style="width: 100%">
+  <tr>
+     <td width="40%" align="left"><img src="../images/citi4.png" width="350" height="92" /></td>
+     <!--<td width="420" align="left">
+     <img src="../images/70Salud.jpg" width="375" height="91" /></td>-->
+     <!--<td width="683" align="right">
+     <div id="dominio">Recepción Art. 74</div>
+
+     
+     </td>  -->  
+     <td width="60%" align="right">
+             <div class="col-lg-11">
+                    <h2 style=" color: #f5f0f0;"> Data Foundations
+                    
+                    </h2>
+        </div>
+
+     
+     </td>    
+  </tr>
+</table> 
+
+
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation"   style="
+       margin-top: 10px;   background-color: #332626;      ">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu " id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" 
+                            src="../images/Captura1.PNG"  style="  width: 75px;"/>
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> 
+                            <strong class="font-bold text-muted">Juan Lopez</strong>
+                             </span> <span class="text-muted text-xs block">
+                             Data Set Manager <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="#">Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span> Salir</a> 
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            Salud
+                        </div>
+                    </li>
+
+
+<li>
+                       <a id="Buscar" href="../movi_multi_perfil.php" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa  fa-home fa-2x pull-left"></i>
+                        <span class="nav-label">Inicio</span>
+                        </a>
+
+                        </li>                    
+                        <li class="divider"></li>
+<li>
+                       <a id="Buscar" href="movi_escritorio.php?tipo=rf&origen=m" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa  fa-desktop fa-2x pull-left"></i>
+                        <span class="nav-label">Escritorio</span>
+                        </a>
+
+</li>                    
+<li class="divider"></li>
+<li>
+
+                       <a id="smweb-ingreso-rf" href="#" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa fa-database fa-2x pull-left"></i>
+                        <span class="nav-label ">New Data Set</span>
+                        </a>
+
+</li>
+<li class="divider"></li>
+
+<!--
+<li>
+
+                       <a id="smweb-baja-rf" href="#" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa fa-user-times fa-2x pull-left"></i>
+                        <span class="nav-label ">Bajas</span>
+                        </a>
+
+</li>
+<li class="divider"></li>
+<li>
+
+                       <a id="smweb-reingresos-rf" href="#" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa  fa-user-md fa-2x pull-left"></i>
+                        <span class="nav-label "> Reingresos </span>
+                        </a>
+
+</li>
+<li class="divider"></li>
+<li>
+
+                       <a id="smweb-buscar-rf" href="#" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa  fa-search fa-2x pull-left"></i>
+                        <span class="nav-label "> Buscar </span>
+                        </a>
+
+</li>
+<li class="divider"></li>
+<li>
+
+                       <a id="smweb-estadisticas-rf" href="#" 
+                                class="btn btn-w-m btn-outline btn-default ">
+                        <i class="fa fa-bar-chart  fa-2x pull-left"></i>
+                        <span class="nav-label "> Estadisticas </span>
+                        </a>
+
+</li>
+--->
+
+
+
+
+
+                </ul>
+
+            </div>
+        </nav>
+
+        
+<div style="clear: both;width: 100%;border-top: 6px solid #BBBBBB;margin-bottom: 0px;height: 10.25px;"></div>
+
+
+	<div id="page-wrapper" class="gray-bg dashbard-1">
+
+
+<div class="header-x pull-right">                                        
+                    <div class="s-search">
+                        <div class="ss-trigger"><i class="icon-search2"></i></div>
+                        <div class="ss-content" style="overflow-y: initial !important">
+                            <span class="ss-close fa fa-close icon-cross2" style="color:#f5f5f5"></span>
+                            <div class="ssc-inner">
+                                <form name="formSearch">
+                                    <div class="form-group">
+                                        <input type="text" id="searchBlock" placeholder="Buscar Aquí..." class="form-control text-uppercase" autofocus>
+                                        <button type="submit" id="changeSearch"><i class="fa fa-search icon-search2"></i></button>
+                                    </div>
+                                </form>
+                                <br>                                                    
+                            </div>
+                            <div id="resultsInput"> </div>
+                        </div>
+                    </div>
+                </div>
+
+<script>
+    
+$('#searchBlock').focus();
+console.log('movi_escritorio/searchBlock/focus');
+
+</script>                
+
+
+
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation"  style="margin-bottom: 0px;">
+
+            <div class="navbar-header">
+
+                <div class="col-lg-12">
+                    
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="#">513</a>
+                        </li>
+                        <li>
+                            <a href="#">  </a>
+                        </li>
+                        <li class="active">
+                            <strong>Escritorio Virtual </strong>
+                        </li>
+                    </ol>
+                </div>
+
+
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <h3>
+                    Data Tracing Automation Process
+                    </h3>
+                    
+                </li>
+                </li>
+
+
+                <li>
+
+<a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span> Salir</a> 
+
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+
+
+
+        
+
+<!-- Inicia escritorio -->
+
+
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+
+     </div>
+
+   <div class="wrapper wrapper-content animated fadeInRight" id="main_page" style="
+    padding-top: 0px;">
+    <div class="row" style="  padding-left: 0px;">
+
+
+
+
+
+
+                <div class="col-lg-12" style="  padding-left: 0px;\>
+                    <div class="ibox">
+                        <div class="ibox-title">
+                        <h5>Data Tracing &nbsp;&nbsp;/  &nbsp;&nbsp;&nbsp; </h5>
+                            <h5>Data Set Management</h5>
+                            <div class="ibox-tools">
+                                <a href="" class="btn btn-primary btn-xs">26 de May de 2022</a>
+                            </div>
+                        </div>
+<!--						
+                        <div class="ibox-content">
+                            <div class="m-b-lg">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Teclee nombre ..." 
+                                    class=" form-control">
+                                    <span class="input-group-btn">
+                                       <button type="button" class="btn btn-white">
+										<i class="fa  fa-search pull-left"></i>
+                                        Buscar</button>
+                                   </span>
+                                </div>
+                        <div class="m-t-md">
+
+
+                                    <strong> 61 Movimientos</strong>
+
+
+
+                        </div>
+-->						
+						
+
+                            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox ">
+                        <div class="ibox-title">
+                            <h5>Data Set para Ejercicio de Data Tracing</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <p>
+                                <strong>Data Set</strong> Existen cuatro tipos de Datasets catalogados según su origen y formato, los cuales son usados según las necesidades de los modelos de datos a trabajar.
+								</p>
+<!--
+                            <h4>Basic example</h4>
+
+                            <div class="jqGrid_wrapper">
+                                <table id="table_list_1"></table>
+                                <div id="pager_list_1"></div>
+                           </div>
+-->
+                            <h4>Data Set Load  example</h4>
+                            <p>
+
+                            </p>
+
+                            <div class="jqGrid_wrapper">
+                                <table id="table_list_2"></table>
+                                <div id="pager_list_2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>                     
+          </div>	
+
+
+
+ <!-- Fin de escritorio -->           
+
+
+<div class="ir-arriba" style="display: block;"><img src="../images/arrows.png"></div>
+
+
+
+
+
+
+
+
+
+							
+    <div class="spiner-example modal inmodal" id="myModal4" tabindex="-1" 
+    role="dialog" aria-hidden="true" style="display:none; position: absolute;">
+<br>
+      <br>
+      <br>
+
+      <div class="sk-spinner sk-spinner-fading-circle">
+
+                         <div class="sk-circle1 sk-circle " 
+                                style="width: 300%;height: 300%;"></div>
+
+                            <div class="sk-circle2 sk-circle " 
+                                style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle3 sk-circle " 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle4 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle5 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle6 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle7 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle8 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle9 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle10 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle11 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+                            <div class="sk-circle12 sk-circle" 
+                            style="width: 300%;height: 300%;"></div>
+        </div>
+    </div>
+                
+
+			
+   <!-- Mainly scripts -->
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+    <script src="../js/plugins/flot/jquery.flot.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="../js/plugins/flot/jquery.flot.pie.js"></script>
+
+    <!-- Peity  
+    <script src="../js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="../js/demo/peity-demo.js"></script>
+
+    -->
+
+    <!-- Custom and plugin javascript  -->
+    <script src="../js/inspinia.js"></script>
+    <script src="../js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="../js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <!-- GITTER -->
+    <script src="../js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="../js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    
+
+    <!-- Sparkline demo data
+    <script src="../js/demo/sparkline-demo.js"></script>
+  -->
+
+    <!-- ChartJS-->
+    <script src="../js/plugins/chartJs/Chart.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="../js/plugins/toastr/toastr.min.js"></script>
+
+     <!-- DROPZONE -->
+
+<!--     
+    <script src="../js/plugins/dropzone/dropzone.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  -->  
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script> 
+
+    <script>
+        $(document).ready(function() {
+
+
+/**
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex)
+                    {
+                        return true;
+                    }
+
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18)
+                    {
+                        return false;
+                    }
+
+                    var form = $(this);
+
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex)
+                    {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex)
+                {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18)
+                    {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3)
+                    {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                        errorPlacement: function (error, element)
+                        {
+                            element.before(error);
+                        },
+                        rules: {
+                            confirm: {
+                                equalTo: "#password"
+                            }
+                        }
+                    });
+
+
+**/
+
+
+
+
+
+
+
+
+            
+
+            var data1 = [
+                [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
+            ];
+            var data2 = [
+                [0,1],[1,0],[2,2],[3,0],[4,1],[5,3],[6,1],[7,5],[8,2],[9,3],[10,2],[11,1],[12,0],[13,2],[14,8],[15,0],[16,0]
+            ];
+            $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
+                data1, data2
+            ],
+                    {
+                        series: {
+                            lines: {
+                                show: false,
+                                fill: true
+                            },
+                            splines: {
+                                show: true,
+                                tension: 0.4,
+                                lineWidth: 1,
+                                fill: 0.4
+                            },
+                            points: {
+                                radius: 0,
+                                show: true
+                            },
+                            shadowSize: 2
+                        },
+                        grid: {
+                            hoverable: true,
+                            clickable: true,
+                            tickColor: "#d5d5d5",
+                            borderWidth: 1,
+                            color: '#d5d5d5'
+                        },
+                        colors: ["#1ab394", "#1C84C6"],
+                        xaxis:{
+                        },
+                        yaxis: {
+                            ticks: 4
+                        },
+                        tooltip: false
+                    }
+            );
+
+            var doughnutData = [
+                {
+                    value: 300,
+                    color: "#a3e1d4",
+                    highlight: "#1ab394",
+                    label: "App"
+                },
+                {
+                    value: 50,
+                    color: "#dedede",
+                    highlight: "#1ab394",
+                    label: "Software"
+                },
+                {
+                    value: 100,
+                    color: "#A4CEE8",
+                    highlight: "#1ab394",
+                    label: "Laptop"
+                }
+            ];
+
+            var doughnutOptions = {
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                percentageInnerCutout: 45, // This is 0 for Pie charts
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false
+            };
+
+//            var ctx = document.getElementById("doughnutChart").getContext("2d");
+//            var DoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+
+            var polarData = [
+                {
+                    value: 300,
+                    color: "#a3e1d4",
+                    highlight: "#1ab394",
+                    label: "App"
+                },
+                {
+                    value: 140,
+                    color: "#dedede",
+                    highlight: "#1ab394",
+                    label: "Software"
+                },
+                {
+                    value: 200,
+                    color: "#A4CEE8",
+                    highlight: "#1ab394",
+                    label: "Laptop"
+                }
+            ];
+
+            var polarOptions = {
+                scaleShowLabelBackdrop: true,
+                scaleBackdropColor: "rgba(255,255,255,0.75)",
+                scaleBeginAtZero: true,
+                scaleBackdropPaddingY: 1,
+                scaleBackdropPaddingX: 1,
+                scaleShowLine: true,
+                segmentShowStroke: true,
+                segmentStrokeColor: "#fff",
+                segmentStrokeWidth: 2,
+                animationSteps: 100,
+                animationEasing: "easeOutBounce",
+                animateRotate: true,
+                animateScale: false
+            };
+           // var ctx = document.getElementById("polarChart").getContext("2d");
+           // var Polarchart = new Chart(ctx).PolarArea(polarData, polarOptions);
+
+        });
+
+    </script>
+
+<script>
+
+
+
+
+</script>
+
+
+<script>
+
+$("body").click(function(e){
+ // alert('>' + e.target.id + '<  >' + e.target.type +'<');
+  //  alert(document.querySelector('#cargaotravez'));
+
+  if ((e.target.id==="cargaotravez" )|| (e.target.id==="cargaotravezicon")||(e.target.id==="cargaotravezspan"))
+   {
+       // alert('a cargar otra vez ');
+        //$('#x00').load("../ptfma_dropzone.php");
+        //window.open("ptma_opcd.php");
+        window.location.href = "ptma_opcd.php";
+   }  
+   
+}); // 
+
+
+
+
+
+</script>
+
+	
+
+<!-- ace scripts -->
+        <script src="../css/assets/js/ace-elements.min.js"></script>
+        <script src="../css/assets/js/ace.min.js"></script>
+
+
+    <!-- jqGrid -->
+    <script src="../js/plugins/jqGrid/i18n/grid.locale-en.js"></script>
+    <script src="../js/plugins/jqGrid/jquery.jqGrid.min.js"></script>
+
+
+
+<script>
+    /* MESSAGE BOX */
+      $(".mb-control").on("click",function(){
+
+        var Ctrl = event.target.id;
+
+        console.log('mb-control');
+        console.log('Ctrl >'+Ctrl +'<');
+
+        //var box = $($(this).data("box"));
+        var box = $('#mb-signout');
+
+        console.log('box >'+box +'<');
+        console.log('box.length >'+box.length +'<');
+        if(box.length > 0){
+          box.toggleClass("open");
+          
+          var sound = box.data("sound");
+          
+          if(sound === 'alert')
+            playAudio('alert');
+          
+          if(sound === 'fail')
+            playAudio('fail');
+          
+        }        
+        return false;
+      });
+
+
+      $(".mb-control-close").on("click",function(){
+         $(this).parents(".message-box").removeClass("open");
+         return false;
+      });    
+    /* END MESSAGE BOX */
+    /* PLAY SOUND FUNCTION */
+      function playAudio(file){
+        if(file === 'alert')
+          document.getElementById('audio-alert').play();
+
+        if(file === 'fail')
+          document.getElementById('audio-fail').play();    
+      }
+    /* END PLAY SOUND FUNCTION */
+  </script>
+  
+
+
+
+
+
+<script>
+
+
+     $('#ifomope').click(function(){
+
+            $.confirm({
+                icon: 'fa fa-check-circle fa-2x fa-fw',
+    title: 'Impresion de FOMOPE',
+    content: '¿Desea Imprimir el FOMOPE?',
+    type: 'green',
+    buttons: {
+        Aceptar: function () {
+            //location.href = '';
+
+             window.open('http://10.1.247.45/demof/Static_Full_Version/FileUpload/Digitalizacion.pdf','_blank');
+
+        },
+        cancelar: function () {
+            console.log('Cancelo Impresion');
+        }
+    }
+});
+
+
+        });
+
+
+
+
+
+     $('#ival2').click(function(){
+
+            //alert ('Estatus de la Validacion');
+
+            var contenido=
+'<div class="timeline-items">' +
+'                                                   <div class="timeline-item clearfix">' +
+'                                                       <div class="timeline-info">' +
+'                                                           <i class="timeline-indicator ace-icon fa fa-clock-o btn btn-success no-hover"></i>' +
+'                                                           <span class="label label-info label-sm"></span>' +
+'                                                       </div>' +
+'' +
+'                                                       <div class="widget-box transparent collapsed">' +
+'                                                           <div class="widget-header widget-header-small">' +
+'                                                               <h5 class="widget-title smaller">' +
+'                                                                   <a href="#" class="blue">SPC</a>' +
+'                                                                   <span class="grey"></span>' +
+'                                                               </h5>' +
+'' +
+'                                                               <span class="widget-toolbar no-border">' +
+'                                                                   <i class="ace-icon fa fa-clock-o bigger-110"></i>' +
+'                                                                   13:45' +
+'                                                               </span>' +
+'' +
+'                                                               <span class="widget-toolbar">' +
+'                                                                   <a href="#" data-action="reload">' +
+'                                                                       <i class="ace-icon fa fa-refresh"></i>' +
+'                                                                   </a>' +
+'' +
+'                                                                   <a href="#" data-action="collapse">' +
+'                                                                       <i class="ace-icon fa fa-chevron-down"></i>' +
+'                                                                   </a>' +
+'                                                               </span>' +
+'                                                           </div>' +
+'' +
+'                                                           <div class="widget-body">' +
+'                                                               <div class="widget-main">' +
+'                                                                   Verificado por el Servicio Profesional de Carrera' +
+'                                                                   <div class="space-6"></div>' +
+'' +
+'                                                                   <div class="widget-toolbox clearfix">' +
+'                                                                       <div class="pull-left">' +
+
+'                                                                       </div>' +
+'' +
+'                                                                       <div class="pull-right action-buttons">' +
+'                                                                       </div>' +
+'                                                                   </div>' +
+'                                                               </div>' +
+'                                                           </div>' +
+'                                                       </div>' +
+'                                                   </div>' +
+'' +
+'                                                   <div class="timeline-item clearfix">' +
+'                                                       <div class="timeline-info">' +
+'                                                           <i class="timeline-indicator ace-icon fa fa-clock-o btn btn-success no-hover"></i>' +
+'                                                       </div>' +
+'' +
+'                                                       <div class="widget-box transparent ">' +
+'                                                           <div class="widget-body">' +
+'                                                               <div class="widget-main">' +
+'                                                                   Verificado por Direccionde Personal' +
+'                                                                   <div class="pull-right">' +
+'                                                                       <i class="ace-icon fa fa-clock-o bigger-110"></i>' +
+'                                                                       10:30' +
+'                                                                   </div>' +
+'                                                               </div>' +
+'                                                           </div>' +
+'                                                       </div>' +
+'                                                   </div>' +
+'' +
+'                                                   <div class="timeline-item clearfix">' +
+'                                                       <div class="timeline-info">' +
+'                                                           <i class="timeline-indicator ace-icon fa fa-star btn btn-success no-hover green"></i>' +
+'                                                       </div>' +
+'' +
+'                                                       <div class="widget-box transparent collapsed">' +
+'                                                           <div class="widget-header widget-header-small">' +
+'                                                               <h5 class="widget-title smaller">UR Administración</h5>' +
+'' +
+'                                                               <span class="widget-toolbar no-border">' +
+'                                                                   <i class="ace-icon fa fa-clock-o bigger-110"></i>' +
+'                                                                   10:15' +
+'                                                               </span>' +
+'' +
+'                                                               <span class="widget-toolbar">' +
+'                                                                   <a href="#" data-action="reload">' +
+'                                                                       <i class="ace-icon fa fa-refresh"></i>' +
+'                                                                   </a>' +
+'' +
+'                                                                   <a href="#" data-action="collapse">' +
+'                                                                       <i class="ace-icon fa fa-chevron-down"></i>' +
+'                                                                   </a>' +
+'                                                               </span>' +
+'                                                           </div>' +
+'' +
+'                                                           <div class="widget-body">' +
+'                                                               <div class="widget-main">' +
+'                                                                   La UR no tiene autorizacion para ingresar mas plazas para este Codigo' +
+'                                                                   <div class="space-6"></div>' +
+'' +
+'                                                                   <div class="widget-toolbox clearfix">' +
+'                                                                       <div class="pull-right action-buttons">' +
+'                                                                           <div class="space-4"></div>' +
+'' +
+'                                                                       </div>' +
+'                                                                   </div>' +
+'                                                               </div>' +
+'                                                           </div>' +
+'                                                       </div>' +
+'                                                   </div>' +
+'' +
+'                                                   <div class="timeline-item clearfix">' +
+'                                                       <div class="timeline-info">' +
+'                                                           <i class="timeline-indicator ace-icon fa fa-user-md btn btn-success no-hover"></i>' +
+'                                                       </div>' +
+'' +
+'                                                       <div class="widget-box transparent">' +
+'                                                           <div class="widget-body">' +
+'                                                               <div class="widget-main"> Registro de Empleado</div>' +
+'                                                                   <div class="pull-right">' +
+'                                                                       <i class="ace-icon fa fa-clock-o bigger-110"></i>' +
+'                                                                       09:30' +
+'                                                                   </div>' +
+
+'                                                           </div>' +
+'                                                       </div>' +
+'                                                   </div>' +
+'                                               </div>'  ;
+
+
+
+
+               $.alert({
+                icon: 'fa fa-check-circle fa-2x fa-fw',
+                title: 'Sistema de Movimientos de Personal',
+                content: contenido,
+                columnClass: 'medium',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'green',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+
+        });
+
+
+
+$('span').click(function(){
+    var IdSpan = event.target.id;
+    var Pendientes =new RegExp(/^pend-item/);
+    if(Pendientes.test(IdSpan)){
+        console.log('Span/Pendiente');
+
+    }
+
+
+console.log('Click sobre span');
+});
+
+
+
+
+$('#paso1').click(function(){
+
+console.log('Se activo el paso2');
+});
+
+     $('#ival').click(function(){
+
+            //alert ('Estatus de la Validacion');
+
+            var contenido='<script>'+
+'$(\'#paso1\').click(function(){'+
+'console.log(\'Se activo el paso2\');'+
+' });'+
+'<\/script>' +
+'<div>' +
+'                                                   <ul class="steps" style="margin-left: 0">'+
+'                                                       <li data-step="1" class="complete">'+
+'                                                           <span id="paso1" class="step">1</span>'+
+'                                                           <span class="title">Captura UR</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="2" class="complete">'+
+'                                                           <span class="step">2</span>'+
+'                                                           <span class="title">Validación</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="3" class="complete">'+
+'                                                           <span class="step">3</span>'+
+'                                                           <span class="title">Personal</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="4" class="complete">'+
+'                                                           <span class="step">4</span>'+
+'                                                           <span class="title">SPC</span>'+
+'                                                       </li>'+
+'                                                   </ul>'+
+'                                               </div> <hr>'  +
+'<p class="alert alert-success">' +
+ '                                                            El movimiento ha sido validado por tosa las instancias y procedera a integrase en el proceso de nomina en la quincena 07 del 2018' +
+  '                                                       </p> '  ;
+
+
+
+
+               $.alert({
+                icon: 'fa fa-check-circle fa-2x fa-fw',
+                title: 'Sistema de Movimientos de Personal',
+                content: contenido,
+                columnClass: 'medium',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'green',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+
+        });
+
+
+
+     $('#ipen').click(function(){
+
+            //alert ('Estatus de la Validacion');
+
+            var contenido=
+            
+          '<div>'+
+'                                                   <ul class="steps" style="margin-left: 0">'+
+'                                                       <li data-step="1" class="complete">'+
+'                                                           <span class="step">1</span>'+
+'                                                           <span class="title">Captura UR</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="2" class="complete">'+
+'                                                           <span class="step">2</span>'+
+'                                                           <span class="title">Validación</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="3" class="complete">'+
+'                                                           <span class="step">3</span>'+
+'                                                           <span class="title">Personal</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="4" class="active">'+
+'                                                           <span class="step" style="border-color:#f3ee54;">4</span>'+
+'                                                           <span class="title">SPC</span>'+
+'                                                       </li>'+
+'                                                   </ul>'+
+'                                               </div> <hr>'  +
+'<p class="alert alert-warning ">' +
+ '  El movimiento esta pendiente de validar por el Servisio Profesional de Carrera  ' +
+  '                                                       </p> '  ;
+
+
+
+
+               $.alert({
+                icon: 'fas fa-clock fa-2x fa-fw',
+                title: 'Sistema de Movimientos de Personal',
+                content: contenido,
+                columnClass: 'medium',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'orange',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+
+        });
+
+
+
+
+
+     $('#irech').click(function(){
+
+            //alert ('Estatus de la Validacion');
+
+            var contenido=
+            
+          '<div>'+
+'                                                   <ul class="steps" style="margin-left: 0">'+
+'                                                       <li data-step="1" class="complete">'+
+'                                                           <span class="step">1</span>'+
+'                                                           <span class="title">Captura UR</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="2" class="complete">'+
+'                                                           <span class="step">2</span>'+
+'                                                           <span class="title">Validación</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="3" class="complete" >'+
+'                                                           <span class="step" style="border-color:#f3145c;"><i class=" ace-icon fa fa-exclamation-triangle red"></i></span>'+
+'                                                           <span class="title">Personal</span>'+
+'                                                       </li>'+
+''+
+'                                                       <li data-step="4" >'+
+'                                                           <span class="step">SPC </span>'+
+'                                                           <span class="title">SPC</span>'+
+'                                                       </li>'+
+'                                                   </ul>'+
+'                                               </div> <hr>'  +
+'<p class="alert alert-danger">' +
+ ' El codigo de puesto no corresponde a la autorizacion de Plazas para la Unidad Responsable ' +
+  '                                                       </p> '  ;
+
+
+
+
+               $.alert({
+                icon: 'fa fa-exclamation-triangle fa-2x fa-fw',
+                title: 'Sistema de Movimientos de Personal',
+                content: contenido,
+                columnClass: 'medium',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'red',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+
+        });
+
+
+        $('#smweb-incidencias').click(function(){
+            //alert ('Incidencia');
+
+            var dt = new Date();  
+
+            var month = dt.getMonth()+1;  
+            var day = dt.getDate();  
+            var year = dt.getFullYear();  
+            var FechaProceso =month + '-' + day + '-' + year;
+            
+            $.post('movi_panel_incidencias.php', { "id": 1, "pzavteid":123 , "fecha_proceso":FechaProceso},
+              function(response,status) {
+                 var string = response;
+               $('#main_page').html(response);
+              }// fin function
+            ); // fin post
+
+
+        });
+
+
+
+
+        $('#smweb-ingreso').click(function(){
+            //alert ('Ingreso de Nuevo Servicor Publico');
+
+            $('#myModal45').modal('show');
+
+
+//            $.post('siap_menu_nuevo.php', { "id": 1, "pzavteid":123 },
+//                  function(response,status) {
+//                        //alert(response);
+//                        var string = response;
+//                        $('#main_page').html(response);
+//                  }// fin function
+//             ); // fin post
+
+        });
+
+        $('#smweb-ingreso-rf').click(function(){
+            //alert ('Ingreso de Nuevo Servicor Publico');
+
+
+            $.post('dtap_formulario_load_file.html', { "id": 1, "pzavteid":123 },
+                  function(response,status) {
+                        //alert(response);
+                        var string = response;
+                        $('#main_page').html(response);
+                  }// fin function
+             ); // fin post
+
+
+
+            // $('#modal-residentes').modal('show');
+			
+			
+			
+        });
+
+
+        $('#smweb-ingreso-ssa').click(function(){
+            console.log ('smweb-ingreso-ssa');
+
+            
+            $.post('smweb_formulario-ssa.php', { "id": 1, "pzavteid":123 },
+                  function(response,status) {
+                        //alert(response);
+                        var string = response;
+                        $('#main_page').html(response);
+                  }// fin function
+             ); // fin post
+        });
+
+
+
+
+        $('#smweb-residentes').click(function(){
+            //alert ('Ingreso de Nuevo Servicor Publico');
+
+            $('#modal-residentes').modal('show');
+
+
+//            $.post('siap_menu_nuevo.php', { "id": 1, "pzavteid":123 },
+//                  function(response,status) {
+//                        //alert(response);
+//                        var string = response;
+//                        $('#main_page').html(response);
+//                  }// fin function
+//             ); // fin post
+
+        });
+
+
+
+        $('#smweb-baja').click(function(){
+
+            $.alert({
+                icon: 'fa fa-exclamation-triangle fa-2x fa-fw',
+                title: 'Sistema de Movimientos de Personal',
+                content: '<h1> En Construcción</h1>',
+                columnClass: 'medium',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'orange',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+
+        });
+
+
+        $('#guardarVacantes').click(function(){
+
+            // alert('Antes de enviar formulario');
+            var varArea = $('#inputBuscarArea').val();
+            var varPuesto = $('#inputBuscarPuesto').val();
+            var varUnidad = $('#inputBuscarUnidad').val();
+            var varTrabajador = $('#inputTrabajador').val();
+            var varConvocatoria = $('#inputConvocatoria').val();            
+            var varPeriodo = $('#inputPeriodo').val();            
+            var plazaVacanteId =$('#inputPlazaVacanteId').val();            
+            //alert(varArea);
+            $.post("trns_vacantes_guardar.php", 
+                        { 
+                            VacanteId:plazaVacanteId,
+                            convocatoria: varConvocatoria
+                        }
+                )
+                .done(function( data ) {
+                   
+                        $('#inputBuscarArea').val('');
+                        $('#inputBuscarPuesto').val('');
+                        $('#inputBuscarUnidad').val('');
+                        $('#inputTrabajador').val('');
+                        $('#inputConvocatoria').val('');            
+                        $('#inputPeriodo').val('');            
+                        $('#inputPlazaVacanteId').val(''); 
+                        $('#inputBuscarArea').focus(); 
+                        $('#inputEstadoTrabajador').val('');
+                        alert('Informacion Guardada Correctamente');
+
+                });
+            });
+
+
+            $('#inputBuscarArea').autocomplete(
+            {
+                source : 'buscar_area.php',
+                select: function(event, ui)
+                {  
+                    var unidadId = ui.item.UNIDADES_ID;
+                    var plazavacanteId = ui.item.PLAZAVACANTE_ID;
+
+                    $.post('buscar_area_contar.php', 
+                        { 
+                                "id": unidadId,
+                                "pzavteid":plazavacanteId 
+                        },
+                      function(response,status) 
+                      {
+                        //alert(response);
+                        if(response==1){
+                          //  alert('UNO');
+                            $.post('buscar_area_datos.php', { "id": unidadId, "pzavteid":plazavacanteId },
+                                      function(response,status) {
+                                            //alert(response);
+                                            var string = response;
+                                            var ArrVacante = string.split("|");
+                                            $('#inputBuscarPuesto').val(ArrVacante[0])  ;        
+                                            $('#inputBuscarUnidad').val(ArrVacante[1]) ;        
+                                            $('#inputEstadoTrabajador').val(ArrVacante[2]) ;   
+                                            $('#inputBuscarPuesto').prop('disabled', true);     
+                                            $('#inputBuscarUnidad').prop('disabled', true);     
+                                            $('#inputEstadoTrabajador').prop('disabled', true);     
+                                            $('#inputPlazaVacanteId').val(plazavacanteId);
+
+                                            $( '#inputConvocatoria' ).focus();
+
+                                      }// fin function
+                            ); // fin post
+                        }
+                        else{
+                            //alert('mas de UNO');
+                            //$('#vacantes').modal('show');
+
+                            //$('#vacantes').modal(data-remote="trns_vacantes_listar_reg.php",data-show="true")
+                        }
+                            
+
+                        //$('#contenido').html(response);
+                      }
+                    );
+
+
+
+                    //$('#inputBuscarArea').value = ui.item.DESCRIPCION;
+
+                    //alert(ui.item.DESCRIPCION);
+                    
+                
+                } 
+            });
+
+            $('#inputBuscarPuesto').autocomplete(
+            {
+                source : 'buscar_puesto.php',
+                select: function(event, ui)
+                {   
+
+                    $('#inputBuscarPuesto').value=ui.item.id;
+
+                } 
+            });
+
+
+            $('#inputBuscarUnidad').autocomplete(
+            {
+                source : 'buscar_unidad.php',
+                select: function(event, ui)
+                {   
+
+                    $('#inputBuscarUnidad').value=ui.item.id;
+
+                } 
+            });
+
+
+
+        $('#btn-logout').click(function(){
+            console.log('btn-logout');
+                            window.location.href = "../index4.php";
+                return false;
+
+           }); 
+
+		$('a').click(function(){
+			var IdQna = event.target.id;
+			var reg = new RegExp(/^vac-noseusa/);
+            var Confianza = new RegExp(/^vac-confianza/);
+            var Base = new RegExp(/^vac-base/);
+            var Eventual = new RegExp(/^vac-eventual/);
+            var Interino = new RegExp(/^vac-interino/);
+            var Provisional = new RegExp(/^vac-provisional/);
+            var RFMedRes = new RegExp(/^vac-rf-mr/);
+            var RFCarSal = new RegExp(/^vac-rf-cs/);
+            var RFIntPre = new RegExp(/^vac-rf-ip/);
+            var RFSSAreaMed = new RegExp(/^vac-rf-ssam/);
+
+            console.log( IdQna);
+
+       if( RFSSAreaMed.test(IdQna)){            
+            var ContURL='url:smweb_rf-ssam.php';
+            var BaderaVacantes=1;
+        } // fin de    if( RFSSAreaMed.test(IdQna))
+
+
+       if( RFIntPre.test(IdQna)){            
+            var ContURL='url:smweb_rf-ip.php';
+            var BaderaVacantes=1;
+        } // fin de    if( RFIntPre.test(IdQna))
+
+
+        if( RFCarSal.test(IdQna)){            
+            var ContURL='url:smweb_rf-cs.php';
+            var BaderaVacantes=1;
+        } // fin de    if( RFCarSal.test(IdQna))
+
+
+
+
+        if( RFMedRes.test(IdQna)){            
+            var ContURL='url:smweb_rf-mr.php';
+            var BaderaVacantes=1;
+        } // fin de    if( RFMedRes.test(IdQna))
+
+
+
+
+
+        if( Confianza.test(IdQna)){            
+            var ContURL='url:movi_confianza.php';
+            var BaderaVacantes=1;
+        } // fin de    if( Confianza.test(IdQna))
+
+        if( Base.test(IdQna)){            
+            var ContURL='url:movi_base.php';
+            var BaderaVacantes=1;
+        } // fin de    if( Confianza.test(IdQna))
+
+        if( Eventual.test(IdQna)){            
+            var ContURL='url:movi_eventual.php';
+            var BaderaVacantes=1;
+        } // fin de    if( Confianza.test(IdQna))
+
+        if( Interino.test(IdQna)){            
+            var ContURL='url:movi_interino.php';
+            var BaderaVacantes=1;
+        } // fin de    if( Confianza.test(IdQna))
+
+        if( Provisional.test(IdQna)){            
+            var ContURL='url:movi_provisional.php';
+            var BaderaVacantes=1;
+        } // fin de    if( Confianza.test(IdQna))
+
+
+        if(BaderaVacantes==1){
+              Noe = $.confirm({
+                icon: 'fa fa-users fa-2x',
+                title: 'Sistema de Movimientos de Personal',
+                content: ContURL,
+                columnClass: 'large',
+                animationSpeed:800,
+                animationBounce:1,
+                animation: 'zoom',
+                closeAnimation: 'zoom',
+                 animationBounce: 1.5,
+                animateFromElement: false,
+                theme: 'material',
+                type: 'blue',
+                buttons: {
+                    Aceptar: {
+                         btnClass: 'btn-green',
+                         action:function () {
+                        }
+                    }
+                }
+            });
+
+        }       
+
+		if( reg.test(IdQna && false)){
+            $('#myModal45 .close').click();
+            $.post('siap_menu_nuevo_opc_2.php', { "id": 1, "pzavteid":123 },
+              function(response,status) {
+                    //alert(response);
+                    var string = response;
+                    $('#main_page').html(response);
+              }// fin function
+            ); // fin post
+		}
+        else {
+            if(IdQna == 'Qhis') {   
+                var varhtml ='?'+ $('#Qhis').attr('href');
+                $('#contenido').load( "ptfma_historico.php"+ varhtml);
+                return false;
+              }
+       }
+	}
+);
+
+
+
+
+</script>
+
+    <script>
+        $(document).ready(function () {
+
+
+            // Examle data for jqGrid
+            var mydata = [
+                {id: "1", invdate: "2010-05-24", name: "test", note: "note", tax: "10.00", total: "2111.00"} ,
+                {id: "2", invdate: "2010-05-25", name: "test2", note: "note2", tax: "20.00", total: "320.00"},
+                {id: "3", invdate: "2007-09-01", name: "test3", note: "note3", tax: "30.00", total: "430.00"},
+                {id: "4", invdate: "2007-10-04", name: "test", note: "note", tax: "10.00", total: "210.00"},
+                {id: "5", invdate: "2007-10-05", name: "test2", note: "note2", tax: "20.00", total: "320.00"},
+                {id: "6", invdate: "2007-09-06", name: "test3", note: "note3", tax: "30.00", total: "430.00"},
+                {id: "7", invdate: "2007-10-04", name: "test", note: "note", tax: "10.00", total: "210.00"},
+                {id: "8", invdate: "2007-10-03", name: "test2", note: "note2", amount: "300.00", tax: "21.00", total: "320.00"},
+                {id: "9", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "11", invdate: "2007-10-01", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "12", invdate: "2007-10-02", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "13", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "14", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "15", invdate: "2007-10-05", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "16", invdate: "2007-09-06", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "17", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "18", invdate: "2007-10-03", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "19", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "21", invdate: "2007-10-01", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "22", invdate: "2007-10-02", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "23", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "24", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "25", invdate: "2007-10-05", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "26", invdate: "2007-09-06", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"},
+                {id: "27", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00"},
+                {id: "28", invdate: "2007-10-03", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00"},
+                {id: "29", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00"}
+            ];
+
+            // Configuration for jqGrid Example 1
+            $("#table_list_1").jqGrid({
+                data: mydata,
+                datatype: "local",
+                height: 250,
+                autowidth: true,
+                shrinkToFit: true,
+                rowNum: 14,
+                rowList: [10, 20, 30],
+                colNames: ['Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Notes'],
+                colModel: [
+                    {name: 'id', index: 'id', width: 60, sorttype: "int"},
+                    {name: 'invdate', index: 'invdate', width: 90, sorttype: "date", formatter: "date"},
+                    {name: 'name', index: 'name', width: 100},
+                    {name: 'amount', index: 'amount', width: 80, align: "right", sorttype: "float", formatter: "number"},
+                    {name: 'tax', index: 'tax', width: 80, align: "right", sorttype: "float"},
+                    {name: 'total', index: 'total', width: 80, align: "right", sorttype: "float"},
+                    {name: 'note', index: 'note', width: 150, sortable: false}
+                ],
+                pager: "#pager_list_1",
+                viewrecords: true,
+                caption: "Data Set de Ejemplo",
+                hidegrid: false
+            });
+
+            // Configuration for jqGrid Example 2
+            $("#table_list_2").jqGrid({
+                data: mydata,
+                datatype: "local",
+                height: 450,
+                autowidth: true,
+                shrinkToFit: true,
+                rowNum: 20,
+                rowList: [10, 20, 30],
+                colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+                colModel:[
+                    {name:'id',index:'id', editable: true, width:60, sorttype:"int",search:true},
+                    {name:'invdate',index:'invdate', editable: true, width:90, sorttype:"date", formatter:"date"},
+                    {name:'name',index:'name', editable: true, width:100},
+                    {name:'amount',index:'amount', editable: true, width:80, align:"right",sorttype:"float", formatter:"number"},
+                    {name:'tax',index:'tax', editable: true, width:80, align:"right",sorttype:"float"},
+                    {name:'total',index:'total', editable: true, width:80,align:"right",sorttype:"float"},
+                    {name:'note',index:'note', editable: true, width:100, sortable:false}
+                ],
+                pager: "#pager_list_2",
+                viewrecords: true,
+                caption: "Data Set de Ejemplo",
+                add: true,
+                edit: true,
+                addtext: 'Add',
+                edittext: 'Edit',
+                hidegrid: false
+            });
+
+            // Add selection
+            $("#table_list_2").setSelection(4, true);
+
+
+            // Setup buttons
+            $("#table_list_2").jqGrid('navGrid', '#pager_list_2',
+                    {edit: true, add: true, del: true, search: true},
+                    {height: 200, reloadAfterSubmit: true}
+            );
+
+            // Add responsive to jqGrid
+            $(window).bind('resize', function () {
+                var width = $('.jqGrid_wrapper').width();
+                $('#table_list_1').setGridWidth(width);
+                $('#table_list_2').setGridWidth(width);
+            });
+        });
+
+    </script>
+
+
+
+			</body>
+			</html>
+	

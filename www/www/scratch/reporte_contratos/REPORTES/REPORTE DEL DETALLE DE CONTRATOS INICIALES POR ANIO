@@ -1,0 +1,60 @@
+-- CONSULTAS QUE EXTRAEN INFORMACION
+-- DEDE EL INCIIO COMO CONTRATO 
+-- AL FINAL SE CONSIGUE CREAR EL DETALLE 
+-- DEL REPORTE DE CONTRATOS QUE INICIAN POR AÑO
+
+-- 2016
+
+select substr(rd.rfc,1,10), rd.ESTADO, rd.UR, rd.CURP, rd.NOMBRE, rd.QNAENVIO, rd.ANIOENV
+from reporte_contrato_debug rd, (
+                              select substr(rfc,1,10) rfc2,estado, min(anioenv||qnaenvio) limite
+                              from reporte_contrato_debug
+                              where UR='CON'
+                              group by substr(rfc,1,10), estado
+                              having min(anioenv||qnaenvio) like '2016%'
+                              ORDER BY 1,2) tab
+where substr(rd.rfc,1,10)=tab.rfc2 and rd.estado=tab.estado and
+rd.anioenv||rd.qnaenvio >= tab.limite
+order by rfc, estado, anioenv, qnaenvio;
+
+-- 2015
+
+select substr(rd.rfc,1,10), rd.ESTADO, rd.UR, rd.CURP, rd.NOMBRE, rd.QNAENVIO, rd.ANIOENV
+from reporte_contrato_debug rd, (
+                              select substr(rfc,1,10) rfc2,estado, min(anioenv||qnaenvio) limite
+                              from reporte_contrato_debug
+                              where UR='CON'
+                              group by substr(rfc,1,10), estado
+                              having min(anioenv||qnaenvio) like '2015%'
+                              ORDER BY 1,2) tab
+where substr(rd.rfc,1,10)=tab.rfc2 and rd.estado=tab.estado and
+rd.anioenv||rd.qnaenvio >= tab.limite
+order by rfc, estado, anioenv, qnaenvio;
+
+-- 2014
+
+select substr(rd.rfc,1,10), rd.ESTADO, rd.UR, rd.CURP, rd.NOMBRE, rd.QNAENVIO, rd.ANIOENV
+from reporte_contrato_debug rd, (
+                              select substr(rfc,1,10) rfc2,estado, min(anioenv||qnaenvio) limite
+                              from reporte_contrato_debug
+                              where UR='CON'
+                              group by substr(rfc,1,10), estado
+                              having min(anioenv||qnaenvio) like '2014%'
+                              ORDER BY 1,2) tab
+where substr(rd.rfc,1,10)=tab.rfc2 and rd.estado=tab.estado and
+rd.anioenv||rd.qnaenvio >= tab.limite
+order by rfc, estado, anioenv, qnaenvio;
+
+-- 2013
+
+select substr(rd.rfc,1,10), rd.ESTADO, rd.UR, rd.CURP, rd.NOMBRE, rd.QNAENVIO, rd.ANIOENV
+from reporte_contrato_debug rd, (
+                              select substr(rfc,1,10) rfc2,estado, min(anioenv||qnaenvio) limite
+                              from reporte_contrato_debug
+                              where UR='CON' and anioenv='2013'
+                              group by substr(rfc,1,10), estado
+                              having min(anioenv||qnaenvio) like '2013%'
+                              ORDER BY 1,2) tab
+where substr(rd.rfc,1,10)=tab.rfc2 and rd.estado=tab.estado and
+rd.anioenv||rd.qnaenvio >= tab.limite
+order by rfc, estado, anioenv, qnaenvio;

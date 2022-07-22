@@ -1,0 +1,24 @@
+-- Obtener Reporte detalaldo de las fechas de 
+-- Inicio por ano
+ --- partiendo de que tenemos
+
+select estado,ce.des_estado, count(*)
+from (
+select substr(rfc,1,10),estado, min(anioenv||qnaenvio),count(*)
+from reporte_contrato_debug
+where UR='CON'
+group by substr(rfc,1,10), estado
+having min(anioenv||qnaenvio) like '2016%'
+ORDER BY 1,2) tab,  CAT_ESTADOS ce
+where tab.estado=ce.ID_ESTADO
+group by estado,ce.des_estado
+order by estado;
+
+-- selecionamos los registro que cumplen
+
+select substr(rfc,1,10),estado, min(anioenv||qnaenvio),count(*)
+from reporte_contrato_debug
+where UR='CON'
+group by substr(rfc,1,10), estado
+having min(anioenv||qnaenvio) like '2016%'
+ORDER BY 1,2
